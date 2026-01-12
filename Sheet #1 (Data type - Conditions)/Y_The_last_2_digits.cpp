@@ -4,17 +4,33 @@ Problem Link:
 */
 
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
 
 int main()
 {
-    long long A, B, C, D;
-    cin >> A >> B >> C >> D;
+    long long a, b, c, d;
+    cin >> a >> b >> c >> d;
 
-    long long result = A * B * C * D;
-    result = result % 100;
 
-    cout << result << endl;
+    a %= 100;
+    b %= 100;
+    c %= 100;
+    d %= 100;
+
+   
+    long long result = (a * b * c * d) % 100;
+
+
+    if (result < 10)
+    {
+        cout << "0" << result << endl;
+    }
+    else
+    {
+        cout << result << endl;
+    }
 
     return 0;
 }
